@@ -12,7 +12,7 @@
  * @author Michael Kölling and David J. Barnes
  * @version 2016.02.29
  */
-public class ClockDisplay
+    public class ClockDisplay
     {
     private NumberDisplay hours;
     private NumberDisplay minutes;
@@ -69,20 +69,39 @@ public class ClockDisplay
     /**
      * Return the current time of this display in the format HH:MM.
      */
-    public String getTime;
-    {
-       if (NumberDisplay.hours > 12) {
+    public String getTime()
+    {   
+       if (hours.getValue() < 13)
+            {
+           displayString = hours.getDisplayValue() + ":" + 
+           minutes.getDisplayValue() + " am";
+           
+            } 
+        else{
+            displayString = (hours.getValue()- 12 )+ ":" + 
+        minutes.getDisplayValue()+ " pm";
+        
+    
+            }
+            return displayString;
+    }
     
      
-    }
     
-    }
+    
+    
     /**
      * Update the internal string that represents the display.
      */
-    private void updateDisplay()
+    private void updateDisplay(){
     {
         displayString = hours.getDisplayValue() + ":" + 
                         minutes.getDisplayValue();
     }
-    }
+    
+}
+
+}
+
+    
+
